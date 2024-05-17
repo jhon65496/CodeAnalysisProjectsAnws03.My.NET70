@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Build" Version="17.4.0" ExcludeAssets="runtime" />
+		<PackageReference Include="Microsoft.Build.Framework" Version="17.9.5" ExcludeAssets="runtime" />
+		<PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="3.10.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\CodeAnalysisProjectsAnws03.My.ClassLibrary.NET60\CodeAnalysisProjectsAnws03.My.ClassLibrary.NET60.csproj" />
+	  <ProjectReference Include="..\CodeAnalysisProjectsAnws03.My.ClassLibrary.NET70\CodeAnalysisProjectsAnws03.My.ClassLibrary.NET70.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="CodeAnalysisProjectsAnws03.My.NET70.runtimeconfig.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
