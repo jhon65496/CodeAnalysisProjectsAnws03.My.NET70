@@ -5,6 +5,8 @@ using dllModel = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET70.Model;
 using dllService = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET70.Services;
 using dllModelNET6 = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET60.Model;
 using dllServiceNET6 = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET60.Services;
+using dllModelNET5 = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET50.Model;
+using dllServiceNET5 = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET50.Services;
 
 
 namespace CodeAnalysisProjectsAnws03.My.NET70
@@ -23,8 +25,9 @@ namespace CodeAnalysisProjectsAnws03.My.NET70
             Console.WriteLine("Hello, World!");
 
             // Test1(); 
-            // Test2();
-               Test3();
+              Test2();
+            // Test3();
+            // Test4();
             Console.ReadKey();
         }
 
@@ -45,8 +48,13 @@ namespace CodeAnalysisProjectsAnws03.My.NET70
         // ProjectAnalysisService5  === === 
         static void Test2()
         {
+            /*
+             * * Could not load file or assembly 'Microsoft.Build, Version=15.1.0.0
+             */
+
             string path = paths[1];
             
+
             List<dllModel.ProjectEntity> table = dllService.ProjectAnalysisService.GetProjects(path);
             string tableToMarkdown = dllService.ProjectAnalysisService.ConvertToMarkdownTable(table);
             dllService.ProjectAnalysisService.WriteAllTextToMarkdownFile(tableToMarkdown);
@@ -58,16 +66,33 @@ namespace CodeAnalysisProjectsAnws03.My.NET70
         /// +-*
         /// </summary>
         static void Test3()
-        {   
-            string path = paths[1];
-
+        {
             /*
-             using dllModelNET6 = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET60.Model;
-            using dllServiceNET6 = CodeAnalysisProjectsAnws03.My.ClassLibrary.NET60.Services;
+             * Could not load file or assembly 'Microsoft.Build, Version=15.1.0.0
              */
+            string path = paths[0];            
             
             List<dllModelNET6.ProjectEntity> table = dllServiceNET6.ProjectAnalysisService.GetProjects(path);
             string tableToMarkdown = dllServiceNET6.ProjectAnalysisService.ConvertToMarkdownTable(table);
+            dllService.ProjectAnalysisService.WriteAllTextToMarkdownFile(tableToMarkdown);
+        }
+        #endregion
+
+
+        #region CodeAnalysisProjectsAnws03.My.ClassLibrary.NET50        
+        /// <summary>
+        /// +-*
+        /// </summary>
+        static void Test4()
+        {
+            /*
+             * Could not load file or assembly 'Microsoft.Build, Version=15.1.0.0
+             */
+
+            string path = paths[0];            
+
+            List<dllModelNET5.ProjectEntity> table = dllServiceNET5.ProjectAnalysisService.GetProjects(path);
+            string tableToMarkdown = dllServiceNET5.ProjectAnalysisService.ConvertToMarkdownTable(table);
             dllService.ProjectAnalysisService.WriteAllTextToMarkdownFile(tableToMarkdown);
         }
         #endregion

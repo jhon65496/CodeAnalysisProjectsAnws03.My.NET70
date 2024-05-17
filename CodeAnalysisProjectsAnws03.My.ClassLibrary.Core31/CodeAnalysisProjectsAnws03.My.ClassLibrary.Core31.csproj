@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+	<PackageReference Include="Microsoft.Build" Version="17.4.0" ExcludeAssets="runtime" />
+	<PackageReference Include="Microsoft.Build.Framework" Version="17.9.5" ExcludeAssets="runtime" />
+	<PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
+	<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="3.10.0" />
+</Project>
